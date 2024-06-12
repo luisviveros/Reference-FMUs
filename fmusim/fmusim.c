@@ -127,7 +127,7 @@ void printUsage() {
         "\n"
         "Example:\n"
         "\n"
-        "  " PROGNAME " BouncingBall.fmu  simulate with the default settings\n"
+        "  " PROGNAME " FORD.fmu  simulate with the default settings\n"
     );
 }
 

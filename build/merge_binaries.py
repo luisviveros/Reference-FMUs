@@ -24,7 +24,7 @@ os.makedirs(dist_merged, exist_ok=True)
 fmusim = root / f'dist-{fmpy.platform_tuple}' / f'fmusim-{fmpy.platform_tuple}' / 'fmusim'
 
 parameters = {
-    'BouncingBall': [
+    'FORD': [
         '--output-interval', '0.05',
     ],
     'Dahlquist': [

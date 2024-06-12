@@ -1,6 +1,6 @@
-# BouncingBall
+# FORD
 
-The BouncingBall implements the following system of equations:
+The FORD implements the following system of equations:
 
 ```
 der(h) = v

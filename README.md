@@ -2,7 +2,7 @@
 
 A set of hand-coded FMUs for development, testing and debugging of the [Functional Mock-up Interface](https://fmi-standard.org/).
 
-- [BouncingBall](BouncingBall) - a bouncing ball model with state events
+- [FORD](FORD) - a bouncing ball model with state events
 - [Dahlquist](Dahlquist) - Dahlquist test equation
 - [Feedthrough](Feedthrough) - all variable types
 - [Resource](Resource) - load data from a file
@@ -38,7 +38,7 @@ Simulate a Functional Mock-up Unit and write the output to result.csv.
 
 Example:
 
-  fmusim BouncingBall.fmu  simulate with the default settings
+  fmusim FORD.fmu  simulate with the default settings
 ```
 
 You can download the pre-built Reference FMUs and fmusim executables from [releases](https://github.com/modelica/Reference-FMUs/releases).

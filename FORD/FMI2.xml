@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fmiModelDescription
   fmiVersion="2.0"
-  modelName="BouncingBall"
+  modelName="FORD"
   description="This model calculates the trajectory, over time, of a ball dropped from a height of 1 m."
   generationTool="Reference FMUs (development build)"
   guid="{1AE5E10D-9521-4DE3-80B9-D0EAAA7D5AF1}"
   numberOfEventIndicators="1">
 
   <ModelExchange
-    modelIdentifier="BouncingBall"
+    modelIdentifier="FORD"
     canNotUseMemoryManagementFunctions="true"
     canGetAndSetFMUstate="true"
     canSerializeFMUstate="true">
@@ -18,7 +18,7 @@
   </ModelExchange>
 
   <CoSimulation
-    modelIdentifier="BouncingBall"
+    modelIdentifier="FORD"
     canHandleVariableCommunicationStepSize="true"
     canNotUseMemoryManagementFunctions="true"
     canGetAndSetFMUstate="true"
