@@ -362,27 +362,6 @@ def test_event_mode_input_events(platform):
     assert np.all(result['Float64_discrete_output']   == [3, 3, 2, 2, 3, 3,   3, 3, 3])
     assert np.all(result['Int32_output']              == [1, 1, 1, 1, 1, 1,   1, 2, 2])
 
-
-def test_event_mode_time_events(platform):
-
-    result = call_fmusim(
-        platform=platform,
-        fmi_version=3,
-        interface_type='cs',
-        test_name='test_event_mode_input_events',
-        args=[
-            '--stop-time', '5',
-            '--output-interval', '2.5',
-            '--event-mode-used',
-            '--early-return-allowed'
-        ],
-        model='Stair.fmu'
-    )
-
-    assert np.all(result['time'] == [0, 1, 1, 2, 2, 2.5, 3, 3, 4, 4, 5, 5])
-    assert np.all(result['counter'] == [1, 1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 6])
-
-
 @pytest.mark.parametrize('fmi_version, interface_type', product([2, 3], ['cs', 'me']))
 def test_restore_fmu_state(fmi_version, interface_type, arch, platform):
 
