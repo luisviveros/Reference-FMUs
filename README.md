@@ -4,7 +4,6 @@ A set of hand-coded FMUs for development, testing and debugging of the [Function
 
 - [FORD](FORD) - a bouncing ball model with state events
 - [Dahlquist](Dahlquist) - Dahlquist test equation
-- [Feedthrough](Feedthrough) - all variable types
 - [Resource](Resource) - load data from a file
 - [StateSpace](StateSpace) - arrays and structural parameters
 - [VanDerPol](VanDerPol) - Van der Pol test equation

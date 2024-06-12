@@ -30,9 +30,6 @@ parameters = {
     'Dahlquist': [
         '--output-interval', '0.2',
     ],
-    'Feedthrough': [
-        '--output-interval', '1',
-    ],
     'StateSpace': [
         '--output-interval', '1',
     ],
