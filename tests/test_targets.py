@@ -48,7 +48,7 @@ def test_fmi1_me(arch, platform):
 
     build_dir = root / 'build' / f'fmi1-me-{platform}'
 
-    models = ['FORD', 'Dahlquist', 'VanDerPol']
+    models = ['FORD', 'Dahlquist', 'Feedthrough', 'VanDerPol']
 
     for model in models:
         validate(build_dir, model=model, fmi_types=['ModelExchange'], simulate=platform == fmpy.platform_tuple)
@@ -64,7 +64,7 @@ def test_fmi1_cs(arch, platform):
 
     build_dir = root / 'build' / f'fmi1-cs-{platform}'
 
-    models = ['FORD', 'Dahlquist', 'Resource', 'VanDerPol']
+    models = ['FORD', 'Dahlquist', 'Feedthrough', 'Resource', 'VanDerPol']
 
     for model in models:
         validate(build_dir, model=model, fmi_types=['CoSimulation'], simulate=platform == fmpy.platform_tuple)
@@ -80,7 +80,7 @@ def test_fmi2(arch, platform):
 
     build_dir = root / 'build' / f'fmi2-{platform}'
 
-    models = ['FORD', 'Dahlquist', 'Resource', 'VanDerPol']
+    models = ['FORD', 'Dahlquist', 'Resource', 'VanDerPol', 'Feedthrough']
 
     for model in models:
         validate(build_dir, model=model, fmi_types=['ModelExchange', 'CoSimulation'],
@@ -95,7 +95,7 @@ def test_fmi3(arch, platform):
 
     build_dir = root / 'build' / f'fmi3-{platform}'
 
-    models = ['FORD', 'Dahlquist', 'Resource', 'StateSpace', 'VanDerPol']
+    models = ['FORD', 'Dahlquist', 'Feedthrough', 'Resource', 'StateSpace', 'VanDerPol']
 
     for model in models:
         validate(build_dir, model=model, fmi_types=['ModelExchange', 'CoSimulation'],

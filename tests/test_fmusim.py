@@ -92,6 +92,31 @@ def test_start_value_types(fmi_version, interface_type, arch, platform):
             '--start-value', 'Binary_input', '42696E617279',
         ]
 
+    result = call_fmusim(
+        platform=platform,
+        fmi_version=fmi_version,
+        interface_type=interface_type,
+        test_name='test_start_value_types',
+        args=args,
+        model='Feedthrough.fmu'
+    )
+
+    assert result['Float64_continuous_output'][0] == -0.5
+    assert result['Int32_output'][0] == 2147483647
+    assert result['Boolean_output'][0] == 1
+    assert result['Enumeration_output'][0] == 2
+
+    if fmi_version == 3:
+        assert result['Float32_continuous_output'][0] == 0.2
+        assert result['Int8_output'][0] == 127
+        assert result['UInt8_output'][0] == 255
+        assert result['Int16_output'][0] == 32767
+        assert result['UInt16_output'][0] == 65535
+        assert result['UInt32_output'][0] == 4294967295
+        assert result['Int64_output'][0] == 9223372036854775807
+        assert result['UInt64_output'][0] == 18446744073709551615
+
+
 @pytest.mark.parametrize('interface_type', ['cs', 'me'])
 def test_start_value_arrays(work_dir, interface_type, platform):
 
@@ -121,6 +146,41 @@ def test_start_value_arrays(work_dir, interface_type, platform):
 
 
 @pytest.mark.parametrize('fmi_version, interface_type', product([1, 2, 3], ['cs', 'me']))
+def test_input_file(fmi_version, interface_type, arch, platform):
+
+    if fmi_version in {1, 2} and arch not in {'x86', 'x86_64'}:
+        pytest.skip(f"FMI version {fmi_version} is not supported on {arch}.")
+
+    result = call_fmusim(
+        platform=platform,
+        fmi_version=fmi_version,
+        interface_type=interface_type,
+        test_name='test_input_file',
+        args=['--input-file', resources / f'Feedthrough_in.csv', '--stop-time', '5'],
+        model='Feedthrough.fmu'
+    )
+
+    t = result['time']
+
+    # interpolated values
+    x = result['Float64_continuous_output'][np.logical_and(t > 1.25, t < 1.75)]
+
+    # start value
+    assert result['Float64_continuous_output'][0] == 3
+
+    # interpolation
+    assert np.all(x > 2) and np.all(x < 3)
+
+    # extrapolation
+    assert result['Float64_continuous_output'][-1] == 3
+
+    # start value
+    assert result['Int32_output'][0] == 1
+
+    # extrapolation
+    assert result['Int32_output'][-1] == 2
+
+
 def test_arrays(work_dir, platform):
 
     call_fmusim(
@@ -276,6 +336,31 @@ def test_early_return_state_events(platform):
     time = result['time']
 
     assert np.sum(np.logical_and(time > 0, time < 0.5)) == 1
+
+
+def test_event_mode_input_events(platform):
+
+    input_file = resources / 'Feedthrough_in.csv'
+
+    result = call_fmusim(
+        platform=platform,
+        fmi_version=3,
+        interface_type='cs',
+        test_name='test_event_mode_input_events',
+        args=[
+            '--event-mode-used',
+            '--stop-time', '5',
+            '--output-interval', '2.5',
+            '--input-file', input_file,
+            '--event-mode-used'
+        ],
+        model='Feedthrough.fmu'
+    )
+
+    assert np.all(result['time']                      == [0, 1, 1, 2, 2, 2.5, 3, 3, 5])
+    assert np.all(result['Float64_continuous_output'] == [3, 3, 2, 3, 3, 3,   3, 3, 3])
+    assert np.all(result['Float64_discrete_output']   == [3, 3, 2, 2, 3, 3,   3, 3, 3])
+    assert np.all(result['Int32_output']              == [1, 1, 1, 1, 1, 1,   1, 2, 2])
 
 @pytest.mark.parametrize('fmi_version, interface_type', product([2, 3], ['cs', 'me']))
 def test_restore_fmu_state(fmi_version, interface_type, arch, platform):
