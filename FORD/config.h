@@ -1,5 +1,5 @@
 #ifndef config_h
-#define config_h jhkjj
+#define config_h
 
 // define class name and unique id
 #define MODEL_IDENTIFIER FORD
