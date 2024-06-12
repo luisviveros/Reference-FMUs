@@ -189,7 +189,7 @@ if (${FMI_VERSION} EQUAL 3)
 endif()
 
 # Examples
-set(MODEL_NAMES FORD Dahlquist Feedthrough VanDerPol)
+set(MODEL_NAMES FORD Dahlquist VanDerPol)
 
 if (${FMI_VERSION} EQUAL 1)
     if (${FMI_TYPE} STREQUAL CS)
