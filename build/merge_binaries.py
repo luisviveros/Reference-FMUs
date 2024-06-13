@@ -27,9 +27,6 @@ parameters = {
     'FORD': [
         '--output-interval', '0.05',
     ],
-    'Dahlquist': [
-        '--output-interval', '0.2',
-    ],
     'StateSpace': [
         '--output-interval', '1',
     ],

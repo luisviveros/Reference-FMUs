@@ -3,7 +3,6 @@
 A set of hand-coded FMUs for development, testing and debugging of the [Functional Mock-up Interface](https://fmi-standard.org/).
 
 - [FORD](FORD) - a bouncing ball model with state events
-- [Dahlquist](Dahlquist) - Dahlquist test equation
 - [Resource](Resource) - load data from a file
 - [StateSpace](StateSpace) - arrays and structural parameters
 - [VanDerPol](VanDerPol) - Van der Pol test equation

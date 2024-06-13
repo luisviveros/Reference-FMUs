@@ -102,7 +102,7 @@ if (${FMI_VERSION} LESS 3)
 ")
 endif ()
 
-set (MODEL_NAMES FORD Dahlquist VanDerPol)
+set (MODEL_NAMES FORD VanDerPol)
 
 if (${FMI_VERSION} GREATER 1 OR "${FMI_TYPE}" STREQUAL "CS")
   set (MODEL_NAMES ${MODEL_NAMES} Resource)
