@@ -5,7 +5,6 @@ A set of hand-coded FMUs for development, testing and debugging of the [Function
 - [FORD](FORD) - a bouncing ball model with state events
 - [Resource](Resource) - load data from a file
 - [StateSpace](StateSpace) - arrays and structural parameters
-- [VanDerPol](VanDerPol) - Van der Pol test equation
 
 Use the [fmusim](fmusim) executable to simulate an FMU:
 

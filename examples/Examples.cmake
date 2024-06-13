@@ -26,15 +26,12 @@ if (${FMI_VERSION} EQUAL 3)
         include/fmi3FunctionTypes.h
         include/fmi3PlatformTypes.h
         include/model.h
-        VanDerPol/config.h
         src/fmi3Functions.c
-        VanDerPol/model.c
         src/cosimulation.c
         examples/import_static_library.c
     )
     set_target_properties (import_static_library PROPERTIES FOLDER examples)
     target_compile_definitions(import_static_library PRIVATE FMI_VERSION=${FMI_VERSION})
-    target_include_directories(import_static_library PRIVATE include VanDerPol)
     set_target_properties(import_static_library PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY         temp
         RUNTIME_OUTPUT_DIRECTORY_DEBUG   temp
@@ -51,9 +48,7 @@ if (${FMI_VERSION} EQUAL 3)
         src/FMI${FMI_VERSION}.c
         examples/import_shared_library.c
     )
-    add_dependencies(import_shared_library VanDerPol)
     set_target_properties (import_shared_library PROPERTIES FOLDER examples)
-    target_include_directories(import_shared_library PRIVATE include VanDerPol)
     set_target_properties(import_shared_library PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY         temp
         RUNTIME_OUTPUT_DIRECTORY_DEBUG   temp
@@ -136,13 +131,11 @@ if (${FMI_VERSION} EQUAL 3)
     # jacobian
     add_executable(jacobian
         ${EXAMPLE_SOURCES}
-        VanDerPol/config.h
         examples/jacobian.c
     )
-    add_dependencies(jacobian VanDerPol)
+    add_dependencies(jacobian )
     set_target_properties(jacobian PROPERTIES FOLDER examples)
     target_compile_definitions(jacobian PRIVATE FMI_VERSION=${FMI_VERSION} DISABLE_PREFIX)
-    target_include_directories(jacobian PRIVATE include VanDerPol)
     target_link_libraries(jacobian ${LIBRARIES})
     set_target_properties(jacobian PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY         temp
@@ -189,7 +182,7 @@ if (${FMI_VERSION} EQUAL 3)
 endif()
 
 # Examples
-set(MODEL_NAMES FORD VanDerPol)
+set(MODEL_NAMES FORD )
 
 if (${FMI_VERSION} EQUAL 1)
     if (${FMI_TYPE} STREQUAL CS)

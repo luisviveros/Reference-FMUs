@@ -32,9 +32,6 @@ parameters = {
     ],
     'Resource': [
         '--output-interval', '1',
-    ],
-    'VanDerPol':  [
-        '--output-interval', '0.2',
     ]
 }
 
