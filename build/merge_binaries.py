@@ -29,9 +29,6 @@ parameters = {
     ],
     'StateSpace': [
         '--output-interval', '1',
-    ],
-    'Resource': [
-        '--output-interval', '1',
     ]
 }
 

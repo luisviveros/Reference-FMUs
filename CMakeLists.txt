@@ -104,10 +104,6 @@ endif ()
 
 set (MODEL_NAMES FORD)
 
-if (${FMI_VERSION} GREATER 1 OR "${FMI_TYPE}" STREQUAL "CS")
-  set (MODEL_NAMES ${MODEL_NAMES} Resource)
-endif ()
-
 if (${FMI_VERSION} GREATER 2)
   set (MODEL_NAMES ${MODEL_NAMES} StateSpace Clocks)
 endif ()
