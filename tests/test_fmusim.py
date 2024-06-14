@@ -20,7 +20,7 @@ work = Path(__file__).parent / 'work'
 os.makedirs(work, exist_ok=True)
 
 
-def call_fmusim(platform: str, fmi_version: int, interface_type: str, test_name: str, args: Iterable[str], model: str = 'FORD.fmu'):
+def call_fmusim(platform: str, fmi_version: int, interface_type: str, test_name: str, args: Iterable[str], model: str = 'SRR630GM17.fmu'):
 
     if fmi_version == 1:
         install = root / 'build' / f'fmi{fmi_version}-{interface_type}-{platform}' / 'install'
@@ -293,7 +293,7 @@ def test_restore_fmu_state(fmi_version, interface_type, arch, platform):
             '--final-fmu-state-file',
             f'FMUState_{fmi_version}_{interface_type}.bin'
         ],
-        model='FORD.fmu'
+        model='SRR630GM17.fmu'
     )
 
     assert result1['time'][-1] == 1
@@ -309,7 +309,7 @@ def test_restore_fmu_state(fmi_version, interface_type, arch, platform):
             '--initial-fmu-state-file',
             f'FMUState_{fmi_version}_{interface_type}.bin'
         ],
-        model='FORD.fmu'
+        model='SRR630GM17.fmu'
     )
 
     assert result2['time'][0] == 1

@@ -127,7 +127,7 @@ void printUsage() {
         "\n"
         "Example:\n"
         "\n"
-        "  " PROGNAME " FORD.fmu  simulate with the default settings\n"
+        "  " PROGNAME " SRR630GM17.fmu  simulate with the default settings\n"
     );
 }
 

@@ -48,7 +48,7 @@ def test_fmi1_me(arch, platform):
 
     build_dir = root / 'build' / f'fmi1-me-{platform}'
 
-    models = ['FORD']
+    models = ['SRR630GM17']
 
     for model in models:
         validate(build_dir, model=model, fmi_types=['ModelExchange'], simulate=platform == fmpy.platform_tuple)
@@ -64,7 +64,7 @@ def test_fmi1_cs(arch, platform):
 
     build_dir = root / 'build' / f'fmi1-cs-{platform}'
 
-    models = ['FORD']
+    models = ['SRR630GM17']
 
     for model in models:
         validate(build_dir, model=model, fmi_types=['CoSimulation'], simulate=platform == fmpy.platform_tuple)
@@ -80,7 +80,7 @@ def test_fmi2(arch, platform):
 
     build_dir = root / 'build' / f'fmi2-{platform}'
 
-    models = ['FORD']
+    models = ['SRR630GM17']
 
     for model in models:
         validate(build_dir, model=model, fmi_types=['ModelExchange', 'CoSimulation'],
@@ -95,7 +95,7 @@ def test_fmi3(arch, platform):
 
     build_dir = root / 'build' / f'fmi3-{platform}'
 
-    models = ['FORD', 'StateSpace']
+    models = ['SRR630GM17', 'StateSpace']
 
     for model in models:
         validate(build_dir, model=model, fmi_types=['ModelExchange', 'CoSimulation'],

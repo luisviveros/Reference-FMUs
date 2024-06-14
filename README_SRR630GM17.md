@@ -2,7 +2,7 @@
 
 A set of hand-coded FMUs for development, testing and debugging of the [Functional Mock-up Interface](https://fmi-standard.org/).
 
-- [FORD](FORD) - a bouncing ball model with state events
+- [SRR630GM17](SRR630GM17) - a bouncing ball model with state events
 - [StateSpace](StateSpace) - arrays and structural parameters
 
 Use the [fmusim](fmusim) executable to simulate an FMU:
@@ -33,7 +33,7 @@ Simulate a Functional Mock-up Unit and write the output to result.csv.
 
 Example:
 
-  fmusim FORD.fmu  simulate with the default settings
+  fmusim SRR630GM17.fmu  simulate with the default settings
 ```
 
 You can download the pre-built Reference FMUs and fmusim executables from [releases](https://github.com/modelica/Reference-FMUs/releases).

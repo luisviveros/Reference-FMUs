@@ -59,14 +59,14 @@ if (${FMI_VERSION} EQUAL 3)
     # cs_early_return
     add_executable(cs_early_return
         ${EXAMPLE_SOURCES}
-        FORD/config.h
-        examples/FORD.c
+        SRR630GM17/config.h
+        examples/SRR630GM17.c
         examples/cs_early_return.c
     )
-    add_dependencies(cs_early_return FORD)
+    add_dependencies(cs_early_return SRR630GM17)
     set_target_properties(cs_early_return PROPERTIES FOLDER examples)
     target_compile_definitions(cs_early_return PRIVATE FMI_VERSION=${FMI_VERSION} DISABLE_PREFIX)
-    target_include_directories(cs_early_return PRIVATE include FORD)
+    target_include_directories(cs_early_return PRIVATE include SRR630GM17)
     target_link_libraries(cs_early_return ${LIBRARIES})
     set_target_properties(cs_early_return PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY         temp
@@ -77,14 +77,14 @@ if (${FMI_VERSION} EQUAL 3)
     # cs_event_mode
     add_executable(cs_event_mode
         ${EXAMPLE_SOURCES}
-        FORD/config.h
-        examples/FORD.c
+        SRR630GM17/config.h
+        examples/SRR630GM17.c
         examples/cs_event_mode.c
     )
-    add_dependencies(cs_event_mode FORD)
+    add_dependencies(cs_event_mode SRR630GM17)
     set_target_properties(cs_event_mode PROPERTIES FOLDER examples)
     target_compile_definitions(cs_event_mode PRIVATE FMI_VERSION=${FMI_VERSION} DISABLE_PREFIX)
-    target_include_directories(cs_event_mode PRIVATE include FORD)
+    target_include_directories(cs_event_mode PRIVATE include SRR630GM17)
     target_link_libraries(cs_event_mode ${LIBRARIES})
     set_target_properties(cs_event_mode PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY         temp
@@ -95,14 +95,14 @@ if (${FMI_VERSION} EQUAL 3)
     # cs_intermediate_update
     add_executable(cs_intermediate_update
         ${EXAMPLE_SOURCES}
-        FORD/config.h
-        examples/FORD.c
+        SRR630GM17/config.h
+        examples/SRR630GM17.c
         examples/cs_intermediate_update.c
     )
-    add_dependencies(cs_intermediate_update FORD)
+    add_dependencies(cs_intermediate_update SRR630GM17)
     set_target_properties(cs_intermediate_update PROPERTIES FOLDER examples)
     target_compile_definitions(cs_intermediate_update PRIVATE FMI_VERSION=${FMI_VERSION} DISABLE_PREFIX)
-    target_include_directories(cs_intermediate_update PRIVATE include FORD)
+    target_include_directories(cs_intermediate_update PRIVATE include SRR630GM17)
     target_link_libraries(cs_intermediate_update ${LIBRARIES})
     set_target_properties(cs_intermediate_update PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY         temp
@@ -182,7 +182,7 @@ if (${FMI_VERSION} EQUAL 3)
 endif()
 
 # Examples
-set(MODEL_NAMES FORD )
+set(MODEL_NAMES SRR630GM17 )
 
 if (${FMI_VERSION} EQUAL 1)
     if (${FMI_TYPE} STREQUAL CS)

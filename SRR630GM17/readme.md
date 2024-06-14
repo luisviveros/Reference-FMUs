@@ -1,6 +1,6 @@
-# FORD
+# SRR630GM17
 
-The FORD implements the following system of equations:
+The SRR630GM17 implements the following system of equations:
 
 ```
 der(h) = v

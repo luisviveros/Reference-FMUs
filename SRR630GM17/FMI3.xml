@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fmiModelDescription
   fmiVersion="3.0"
-  modelName="FORD"
+  modelName="SRR630GM17"
   description="This model calculates the trajectory, over time, of a ball dropped from a height of 1 m."
   generationTool="Reference FMUs (development build)"
   instantiationToken="{1AE5E10D-9521-4DE3-80B9-D0EAAA7D5AF1}">
 
   <ModelExchange
-    modelIdentifier="FORD"
+    modelIdentifier="SRR630GM17"
     canGetAndSetFMUState="true"
     canSerializeFMUState="true"/>
 
   <CoSimulation
-    modelIdentifier="FORD"
+    modelIdentifier="SRR630GM17"
     canGetAndSetFMUState="true"
     canSerializeFMUState="true"
     canHandleVariableCommunicationStepSize="true"

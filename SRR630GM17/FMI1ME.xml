@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fmiModelDescription
   fmiVersion="1.0"
-  modelName="FORD"
-  modelIdentifier="FORD"
+  modelName="SRR630GM17"
+  modelIdentifier="SRR630GM17"
   description="This model calculates the trajectory, over time, of a ball dropped from a height of 1 m."
   generationTool="Reference FMUs (development build)"
   guid="{1AE5E10D-9521-4DE3-80B9-D0EAAA7D5AF1}"
@@ -36,12 +36,6 @@
     <ScalarVariable name="v_min" valueReference="7" variability="constant" description="Velocity below which the ball stops bouncing">
       <Real start="0.1"/>
     </ScalarVariable>
-</ModelVariables>
-
-  <Implementation>
-    <CoSimulation_StandAlone>
-      <Capabilities canHandleVariableCommunicationStepSize="true" canHandleEvents="true"/>
-    </CoSimulation_StandAlone>
-  </Implementation>
+  </ModelVariables>
 
 </fmiModelDescription>

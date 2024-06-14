@@ -102,7 +102,7 @@ if (${FMI_VERSION} LESS 3)
 ")
 endif ()
 
-set (MODEL_NAMES FORD)
+set (MODEL_NAMES SRR630GM17)
 
 if (${FMI_VERSION} GREATER 2)
   set (MODEL_NAMES ${MODEL_NAMES} StateSpace Clocks)

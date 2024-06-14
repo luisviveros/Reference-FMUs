@@ -2,7 +2,7 @@
 #define config_h
 
 // define class name and unique id
-#define MODEL_IDENTIFIER FORD
+#define MODEL_IDENTIFIER SRR630GM17
 #define INSTANTIATION_TOKEN "{1AE5E10D-9521-4DE3-80B9-D0EAAA7D5AF1}"
 
 #define CO_SIMULATION
